@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Database\Seeds;
+
+use CodeIgniter\Database\Seeder;
+use App\Models\User\UserModel;
+class PenggunaSeeder extends Seeder
+{
+    public function run()
+    {
+        $userModel = new UserModel();
+
+        $data = [
+            [
+                'username' => 'admin',
+                'email' => 'admin@example.com',
+                'password' => password_hash('admin', PASSWORD_BCRYPT),
+                'roles' => 'Admin'
+
+            ],
+            [
+                'username' => 'user',
+                'email' => 'user@example.com',
+                'password' => password_hash('user', PASSWORD_BCRYPT),
+                'roles' => 'User'
+            ]
+        ];
+        foreach ($data as $user) {
+            $userModel->insert($user);
+        }
+    }
+}

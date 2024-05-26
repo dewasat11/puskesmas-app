@@ -1,55 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .card {
-            width: 100%;
-            max-width: 400px;
-            margin: 20px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <div class="card-header text-center">
-            <h2>Register</h2>
-        </div>
-        <div class="card-body">
-            <form action="process_register.php" method="POST">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                </div>
-                <div class="mb-3">
-                    <label for="confirm_password" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Register</button>
-            </form>
-        </div>
-    </div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Registration Page</title>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="<?= base_url()?>template/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="<?= base_url()?>template/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?= base_url()?>template/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition register-page">
+<div class="register-box">
+  <div class="register-logo">
+    <a href="../../index2.html"><b>Registrasi</b></a>
+  </div>
+
+  <div class="card">
+    <div class="card-body register-card-body">
+      <p class="login-box-msg">Silahkan isi formulir berikut</p>
+
+      <form action="../../index.html" method="post">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Nama lengkap">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Confirm password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+              <label for="agreeTerms">
+               Inget Saya!
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+     <div class="text-center pt-3">
+      <a href="<?= base_url() ?>login" class="text-center">Sudah Punya Akun!</a>
+      </div>
+    </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+<!-- /.register-box -->
+
+<!-- jQuery -->
+<script src="<<?= base_url()?>template/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="<<?= base_url()?>template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<<?= base_url()?>template/dist/js/adminlte.min.js"></script>
 </body>
 </html>

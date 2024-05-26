@@ -1,47 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .card {
-            width: 100%;
-            max-width: 400px;
-            margin: 20px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in-Puskesmas</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="<?= base_url()?>template/plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="<?= base_url()?>template/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?= base_url()?>template/dist/css/adminlte.min.css">
 </head>
-<body>
-    <div class="card">
-        <div class="card-header text-center">
-            <h2>Login</h2>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="../../index2.html"><b>Selamat Datang</b></a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Login Menggunakan Username dan Password!</p>
+
+      <form action="<?= base_url() ?>login" method="post">
+        <div class="input-group mb-3">
+
+          <input type="text" name= 'username' class="form-control" placeholder="Username">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-            <form action="process_login.php" method="POST">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-            </form>
+        
+        <div class="input-group mb-3">
+          <input type="password" name= 'password' class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
         </div>
+        <div class="row pt-3">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Ingat saya!
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+   <!-- /.social-auth-links -->
+
+      <div class="text-center">
+      <p class="mb-1 pt-3">
+        Belum punya akun?
+      </p>
+      <p class="mb-0">
+        <a href="<?= base_url('register') ?>" class="text-center">Register sekarang!</a>
+      </p>
+      </div>
     </div>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="<?= base_url()?>template/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="<?= base_url()?>template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?= base_url()?>template/dist/js/adminlte.min.js"></script>
 </body>
 </html>
