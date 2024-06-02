@@ -72,4 +72,32 @@ class AuthController extends BaseController
         }
     
     }
+    public function registerProses()
+    {
+        $data = [];
+        if ($this->request->getMethod() == 'post') {
+            $username = $this->request->getPost('username');
+            $email = $this->request->getPost('email');
+            $password = $this->request->getPost('password');
+            $confirm_password = $this->request->getPost('confirm_password');
+
+            if ($password == $confirm_password) {
+                $data['eror'] = 'Password tidak cocok';
+            } else {
+                $hashedPassword = password_hash($password, PASSWORD_BYCRYPT);
+                $userModel = new UserModel();
+
+                $data = [
+                    'username' => $username,
+                    'email' => $email,
+                    'password' => $hashedPassword,
+                    'roles' => 'User',
+                ];
+                $userModel->insert($data);
+                return redirect()->to('/dashboard');
+            }
+        }
+
+        return view('Auth/v_register', $data);
+    }
 }
